@@ -1,0 +1,177 @@
+ /* General Styles */
+ body {
+    
+    font-family: 'Poppins', sans-serif;
+    background-color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Navigation styles */
+
+nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+
+
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffde59;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative; /* For positioning the underline */
+    padding-bottom: 5px; /* Space between text and underline */
+}
+
+/* Hover effect for other tabs */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c5c5c5;
+    width: 0; /* Start with no width */
+    transition: width 0.3s ease-in-out; /* Animate the width */
+}
+
+/* Add a line below the "Home" tab when it's active (home page) */
+nav ul li a.active::before {
+    width: 100%; /* Full underline for active tab */
+}
+nav ul li a:hover::before {   
+    width: 100%; /* Expand the line fully on hover */
+}
+
+/* Special hover effect for the active tab */
+nav ul li a.active:hover::before {
+    width: 0%; /* Shrink underline to 50% when hovered */
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    opacity: 0; /* Start hidden */
+    transform: translateX(100%); /* Start off-screen to the right */
+    animation: slideIn 0.5s ease forwards; /* Apply slide-in animation */
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ffde59;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Keeps the header below the nav */
+}
+
+.header h1 {
+    font-size: 66px;
+    font-weight:500;
+    color: #c5c5c5;
+    letter-spacing:10px;
+    margin: 0;
+}
+
+/* Project Categories */
+.project-categories ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.project-categories ul li {
+    margin: 0 15px;
+}
+
+.project-categories ul li a {
+    
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 10px;  
+    color: #c5c5c5;
+}
+
+.project-categories :hover{
+    color: #ffde59;
+}
+
+/* Add yellow border to the active tab */
+.project-categories ul li a.active {
+    color: #ffde59;
+    
+}
+
+
+/* Projects Grid */
+.projects-grid {
+    display: flex;
+    flex-direction: column; /* Stacks the items vertically */
+    gap: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.projects-grid.visible {
+    opacity: 1;
+}
+
+.projects-grid .project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.projects-grid .project img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

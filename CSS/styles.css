@@ -332,7 +332,7 @@ nav ul li a.active:hover::before {
 
 /* Card Styling */
 .card {
-  background-color: #1c1c1c; /* Background color of the card */
+  background-color: #ff0101; /* Background color of the card */
   padding: 20px;
   color: #d6d6d6;
   border-radius: 27px;

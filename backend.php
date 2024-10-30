@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Write the message to the file
         if (file_put_contents($file, $formattedMessage, FILE_APPEND)) {
-            echo "Thank you for your message!";
+            echo "Thank you for yourr message!";
         } else {
             echo "Sorry, there was an error saving your message. Please try again.";
         }

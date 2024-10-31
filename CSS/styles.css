@@ -195,7 +195,7 @@ nav ul li a.active:hover::before {
 .cta-button {
   background-color: #ffde59;
   color: #333;
-  width: 20%;
+  width: 150px;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
@@ -219,8 +219,8 @@ nav ul li a.active:hover::before {
   color: #d6d6d6;
   text-align: center;
   width: auto;
-  margin: 20vh 10vh 10vh;
-  height: 150vh;
+  margin: 10rem 5rem 5rem;
+  
 }
 
 /* About Me header box styling */
@@ -228,7 +228,7 @@ nav ul li a.active:hover::before {
   border: 1px solid #ffde59; /* Yellow border */
   display: inline-block;
   width: auto;
-  padding: 10px 500px; /* Padding for the yellow rectangle */
+  padding: 10px 10rem; /* Padding for the yellow rectangle */
   border-radius: 5px; /* Slightly rounded corners */
   margin-bottom: 30px; /* Space between the header and content */
 }
@@ -307,7 +307,7 @@ nav ul li a.active:hover::before {
 .cards-wrapper {
   display: flex;
   align-items: flex-start; /* Align the cards at the top */
-  gap: 40px; /* Space between the cards */
+  gap: 10rem; /* Space between the cards */
   margin: 0 auto; /* Center the container */
   max-width: 100%; /* Ensure the wrapper doesn't overflow */
   padding: 20px;
@@ -323,11 +323,12 @@ nav ul li a.active:hover::before {
 /* Styling for the image part */
 .card-image img {
   width: 100%; /* Image takes full width */
-  height: auto; /* Maintain aspect ratio */
+  height: 300px; /* Maintain aspect ratio */
   border-top-left-radius: 27px; /* Top-left border-radius for image */
   border-top-right-radius: 27px; /* Top-right border-radius for image */
   display: block; /* Remove extra spacing */
   z-index: 1;
+  object-fit:fill;
 }
 
 /* Card Styling */
@@ -338,6 +339,7 @@ nav ul li a.active:hover::before {
   border-radius: 27px;
   position: relative;
   margin-top: -50px;
+  overflow: hidden;
   left: 0;
   right: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
@@ -352,7 +354,7 @@ nav ul li a.active:hover::before {
 }
 
 .card-content p {
-  font-size: 14px; /* Paragraph font size */
+  font-size: 1rem; /* Paragraph font size */
   line-height: 1.6; /* Line height for better readability */
   margin: 0;
 }
@@ -366,6 +368,7 @@ nav ul li a.active:hover::before {
   text-align: center;
   margin-bottom: 40px;
   border: #ffde59 solid 1px;
+  padding: 10px;
   border-radius: 5px;
 }
 .resume h2 {
@@ -379,7 +382,7 @@ nav ul li a.active:hover::before {
   display: flex;
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 10rem auto;
 }
 .leftside {
   width: 25%;
@@ -457,6 +460,231 @@ nav ul li a.active:hover::before {
   .hamburger-menu {
     display: none; /* Hide the hamburger icon */
   }
+}
+
+@media (min-width: 700px) and (max-width: 1280px) and (orientation: landscape) {
+  nav ul {
+    display: none; /* Hide the regular nav links */
+    flex-direction: column;
+    text-align: left;
+    width: 20%;
+    background-color: #272727; /* Match the background color */
+    position: absolute;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    z-index: 1000;
+    padding: 20px 0;
+  }
+  nav ul li a {
+    font-size: 15px;
+  }
+
+  /* Hamburger Menu Icon */
+  .hamburger-menu {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 100;
+    position: absolute; /* Position it relative to the top right corner */
+    top: -25rem; /* Adjust to control distance from the top */
+    right: 0.8rem; /* Adjust to control distance from the right */
+  }
+
+  .hamburger-menu div {
+    width: 100%;
+    height: 3px;
+    background-color: #ffde59;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger-menu:hover div:nth-child(1) {
+    transform: translateY(-5px);
+    background-color: #e09b06;
+    height: 7px;
+    border-radius: 10px;
+  }
+  .hamburger-menu:hover div:nth-child(2) {
+    background-color: #6cbc04;
+    width: 90%;
+    margin-left: 2px;
+    border-radius: 10px;
+  }
+
+  .hamburger-menu:hover div:nth-child(3) {
+    background-color: #7a2304;
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 2px;
+  }
+
+  .hamburger-menu:hover div:nth-child(4) {
+    transform: translateY(3px);
+    background-color: #e09b06;
+    height: 7px;
+    border-radius: 10px;
+  }
+
+  /* Menu Styling and Animations */
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  nav ul li {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  nav ul li a {
+    color: #ffde59;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #d6d6d6;
+  }
+
+  /* Fade-in Effect */
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  nav ul.show li {
+    animation: fadeInSlide 0.5s ease forwards;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.5rem 0 0.5rem;
+    width: auto;
+  }
+
+  .left-section img {
+    max-width: 83%;
+    text-align: center;
+  }
+
+  .intro {
+    margin-top: 4rem;
+    text-align: left;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+  .intro p {
+    width: auto;
+    text-align: justify;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: auto;
+    width: auto;
+  }
+
+  /* aboutme */
+  .aboutme {
+    margin: 0 0.5rem 0 0.5rem;
+    width: auto;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutme-header {
+    margin-top: 1rem;
+    padding: 0.5rem 3rem;
+  }
+  .aboutme-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .aboutme p {
+    width: auto;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .aboutme h1 {
+    margin-bottom: 5vh;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center-align the cards */
+    gap: 10vh; /* Adjust spacing between cards */
+    padding: 0;
+  }
+
+  .card-content h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
+
+  .resume {
+    
+    margin: 5rem 0.5rem 0 0.5rem;
+  }
+
+  .resume-header h1{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+}
+.leftside img{
+  width: auto;
+  height: 15vh;
+}
+
+.leftside {
+  width: 40vw;
+  height: auto;
+}
+.rightside h2{
+  font-size: 1.5rem;
+  text-align: left;
+}
+.contact-info p,
+.contact-info p a{
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
 }
 
 /* Mobile Adjustments */
@@ -650,12 +878,40 @@ nav ul li a.active:hover::before {
   }
 
   .card-content p {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 
+
   .resume {
-    margin-top: 250vh;
+    
+    margin: 5rem 0.5rem 0 0.5rem;
   }
+
+  .resume-header h1{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+}
+.leftside img{
+  width: auto;
+  height: 15vh;
+}
+
+.leftside {
+  width: 40vw;
+  height: auto;
+}
+.rightside h2{
+  font-size: 1.5rem;
+  text-align: left;
+}
+.contact-info p,
+.contact-info p a{
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+
 }
 
 /* Small Mobile (Portrait) Adjustments */

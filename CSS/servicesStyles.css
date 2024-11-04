@@ -1,0 +1,323 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Page Layout */
+  body {
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #2b2b2b;
+    background-color: #2b2b2b;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+.main-content {
+    flex: 1;
+
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+}
+
+  
+  /* Header with Navigation Tabs */
+  nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+
+
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffde59;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative; /* For positioning the underline */
+    padding-bottom: 5px; /* Space between text and underline */
+}
+
+/* Hover effect for other tabs */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c5c5c5;
+    width: 0; /* Start with no width */
+    transition: width 0.3s ease-in-out; /* Animate the width */
+}
+
+/* Add a line below the "Home" tab when it's active (home page) */
+nav ul li a.active::before {
+    width: 100%; /* Full underline for active tab */
+}
+nav ul li a:hover::before {   
+    width: 100%; /* Expand the line fully on hover */
+}
+
+/* Special hover effect for the active tab */
+nav ul li a.active:hover::before {
+    width: 0%; /* Shrink underline to 50% when hovered */
+}
+
+  
+  /* Services Header Section */
+  .services-header {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #1c1c1c;
+    color: #ffde59;
+  }
+  
+  .services-header h2 {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  
+  .services-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #c5c5c5;
+  }
+  
+  /* Services Section */
+  .services-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card h3 {
+    color: #1c1c1c;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px #000000;
+  }
+  
+  .review-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #d6d6d6;
+}
+
+/* review section */
+.review-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffde59;
+}
+
+.review {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.review-button {
+    background-color: #ffde59;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submit-review-button{
+  background-color: #ffde59;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.review-button:hover, .submit-review-button:hover {
+    transform: scale(1.05);
+}
+
+#review-input-box {
+    margin-top: 15px;
+}
+
+#new-review {
+    width: 80%; /* Adjust this percentage or set a fixed width like 300px */
+    max-width: 400px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    margin-bottom: 10px;
+    margin: 0 0 10px; /* Center and add space below */
+    display: block; /* Ensure it's centered as a block element */
+}
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Apply fade-in to the entire page */
+body {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+
+/* Keyframes for slide-in animations */
+@keyframes slideInFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Applying the animations to cards */
+.card-wrapper:nth-child(1), .card-wrapper:nth-child(2) { /* Adjust to select your specific cards */
+  animation: slideInFromLeft 3s ease forwards;
+}
+
+.card-wrapper:nth-child(3), .card-wrapper:nth-child(4) {
+  animation: slideInFromRight 3s ease forwards;
+}
+
+/* chaatbutton */
+.chat-icon {
+  position: fixed;
+  bottom: 50px; /* Distance from the bottom */
+  right: 50px;  /* Distance from the right */
+  z-index: 1000; /* Ensures it floats above other content */
+  background-color: #ffde59; /* Chat button color */
+  color: #2b2b2b;
+  font-size: 24px; /* Icon size */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Makes the icon circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1); /* Slightly enlarges on hover */
+  background-color: #ffd52d; /* Darker shade on hover */
+}
+
+  /* Position modal beside the chat icon */
+  .modal-dialog {
+    position: absolute;
+    width: 100%;
+    bottom: 50px; /* Adjust as needed to place it above the button */
+    right: 120px; /* Align with chat icon */
+    margin: 0; /* Remove default margin */
+}
+.modal-content{
+  border-radius: 15px;
+}
+
+.modal-body{
+  background-color: #2b2b2b;
+  color: #c5c5c5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 
+.modal-header{
+  background-color: #2b2b2b;
+  color: #c5c5c5;
+}
+
+.btn{
+  background-color: #ffde59;
+  color: #2b2b2b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow */
+}
+
+
+.btn:hover{
+  background-color: #fed015;
+  color: #2b2b2b;
+ 
+}
+
+ /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b2b2b;
+    color: #c5c5c5;
+    font-size: 0.9rem;
+  }
+  

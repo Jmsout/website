@@ -146,6 +146,28 @@ nav ul li a.active:hover::before {
   width: 0%; /* Shrink underline to 50% when hovered */
 }
 
+
+.typing {
+  overflow: hidden;
+  border-right: 5px solid rgb(192, 192, 192);
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+  vertical-align: baseline; /* Ensures alignment with "I'm" */
+  margin-bottom: -20px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 700px; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+
+
 /* Align the badge with "I'm" */
 .intro {
   display: block;
@@ -162,7 +184,7 @@ nav ul li a.active:hover::before {
 }
 
 .intro h1 {
-  font-size: 75px;
+  font-size: 4rem;
   font-weight: 700;
   font-family: "PT Serif", sans-serif;
   margin-right: 15px; /* Adds spacing between "I'm" and the badge */
@@ -205,11 +227,14 @@ nav ul li a.active:hover::before {
   display: block;
   float: right;
   margin-top: 20px;
-  transition: background-color 0.3s ease;
+  will-change: transform; /* Prepares the button for smoother transforms */
+  transition: transform 0.3s ease; /* Smooth transition */
+  
 }
 
 .cta-button:hover {
-  background-color: #d6d6d6;
+  transform: scale(1.2); /* Scales the button to 110% on hover */
+ 
 }
 
 /* About Me Section Styling */
@@ -585,6 +610,25 @@ nav ul li a.active:hover::before {
     width: auto;
   }
 
+  .typing {
+    overflow: hidden;
+    border-right: 5px solid rgb(192, 192, 192);
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+    vertical-align: baseline; /* Ensures alignment with "I'm" */
+    margin-bottom: -15px;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 650px; }
+  }
+  
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+
   .left-section img {
     max-width: 83%;
     text-align: center;
@@ -613,6 +657,8 @@ nav ul li a.active:hover::before {
   }
 
   /* aboutme */
+
+
   .aboutme {
     margin: 0 0.5rem 0 0.5rem;
     width: auto;
@@ -658,7 +704,7 @@ nav ul li a.active:hover::before {
 
   .resume {
     
-    margin: 5rem 0.5rem 0 0.5rem;
+    margin: 5rem 1.5rem 0 1.5rem;
   }
 
   .resume-header h1{
@@ -811,6 +857,25 @@ nav ul li a.active:hover::before {
     width: auto;
   }
 
+  .typing {
+    overflow: hidden;
+    border-right: 5px solid rgb(192, 192, 192);
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+    vertical-align: baseline; /* Ensures alignment with "I'm" */
+    margin-bottom: -10px;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 350px; }
+  }
+  
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+
   .left-section img {
     max-width: 83%;
     text-align: center;
@@ -822,7 +887,7 @@ nav ul li a.active:hover::before {
   }
 
   .intro h1 {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
   .intro p {
     width: auto;
@@ -883,8 +948,7 @@ nav ul li a.active:hover::before {
 
 
   .resume {
-    
-    margin: 5rem 0.5rem 0 0.5rem;
+    margin: 5rem 1.5rem 0 1.5rem;
   }
 
   .resume-header h1{
@@ -901,8 +965,19 @@ nav ul li a.active:hover::before {
   width: 40vw;
   height: auto;
 }
+
+.skills ul li{
+  font-size: 0.8rem;
+}
+.project p {
+  font-size: 0.9rem;
+}
+
+.project h3{
+  font-size: 0.9rem;
+}
 .rightside h2{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: left;
 }
 .contact-info p,

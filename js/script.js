@@ -137,3 +137,26 @@ function closeMenuOnOutsideClick(event) {
         document.removeEventListener("click", closeMenuOnOutsideClick);
     }
 }
+
+
+function toggleTooltip(element) {
+    // Hide any other open tooltips
+    document.querySelectorAll('.contacts div').forEach(div => {
+        if (div !== element) {
+            div.classList.remove('show-tooltip');
+        }
+    });
+
+    // Toggle the tooltip visibility for the clicked element
+    element.classList.toggle('show-tooltip');
+}
+
+// Close tooltip when clicking outside of it
+document.addEventListener('click', function (event) {
+    const isIconClick = event.target.closest('.icon');
+    if (!isIconClick) {
+        document.querySelectorAll('.contacts div').forEach(div => {
+            div.classList.remove('show-tooltip');
+        });
+    }
+});

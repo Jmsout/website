@@ -229,6 +229,7 @@ nav ul li a.active:hover::before {
   font-weight: 500;
   display: block;
   float: right;
+  margin-right: 2rem;
   margin-top: 20px;
   will-change: transform; /* Prepares the button for smoother transforms */
   transition: transform 0.3s ease; /* Smooth transition */
@@ -484,6 +485,64 @@ nav ul li a.active:hover::before {
   display: none; /* Hide the hamburger icon */
 }
 
+ /* Footer Styling */
+ footer{
+  background-color: #1c1c1c;
+  height: 15vh; 
+ }
+  footer .contacts {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    text-align: center;      /* Center text within each icon container */
+}
+
+footer .contacts div {
+    display: inline-block;
+    margin: 1rem 0.8rem;
+    position: relative; /* Position the parent for the tooltip */
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease; /* Smooth transition */
+    
+}
+footer .contacts div i,
+footer .contacts div a {
+  color: #c5c5c5; /* Set color for all icons */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+}
+
+footer .contacts div:hover {
+  transform: rotate(20deg); /* Scale up on hover */
+  color: #ffde59;
+}
+
+footer .contacts div .tooltip {
+  display: none; /* Hidden by default */
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #c5c5c5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+footer .contacts div.show-tooltip .tooltip {
+  display: block; /* Show tooltip when .show-tooltip is added */
+  opacity: 1;
+  bottom: -35px; /* Slight movement for effect */
+}
+
+footer .copyright{
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #404040;
+}
 @media (max-width: 1024px) {
   .hamburger-menu {
     display: none; /* Hide the hamburger icon */

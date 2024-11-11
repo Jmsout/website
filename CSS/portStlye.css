@@ -94,20 +94,15 @@ nav ul li a.active:hover::before {
 
 .header {
     text-align: center;
-    padding: 20px;
-    border: 2px solid #ffde59;
-    border-radius: 10px;
     margin-bottom: 40px;
     margin-top: 100px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1; /* Keeps the header below the nav */
+
 }
 
 .header h1 {
     font-size: 66px;
     font-weight:500;
-    color: #c5c5c5;
-    letter-spacing:10px;
+    color: #ffde59;
     margin: 0;
 }
 
